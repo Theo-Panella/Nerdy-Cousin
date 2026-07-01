@@ -34,8 +34,8 @@ regras = {
 
 
 #====================================================================================
-# Funcao de pre_Filtro do Flask
-def flask_pre_filter(ultimas_linhas,regras):
+# Funcao de pre_Filtro
+def pre_filter(ultimas_linhas,regras):
     # Pega cada linha da ultima linha lida, default = 1
     for cada_linha in ultimas_linhas:
         ''' Pega cada serviço e seu padrao. 
@@ -53,15 +53,18 @@ def flask_pre_filter(ultimas_linhas,regras):
                         (PadraoB) nome_padrao: "str_padrao"
                         ...
                 '''
+            validado = False
             for nome_padrao, padrao_compilado  in padrao.items():
                 # Verifica se atende os padrões daquele servico
                 if padrao_compilado.search(cada_linha.strip()):
-                    #envio_para_API(cada_linha.strip())
-                    print(f'Log do servico {servico} e Tipo {nome_padrao} encontrado, aplicando pre-filtro do {servico}: {nome_padrao}')
-                    #with open("Colector/minimim.txt", "a") as file:
-                    #    file.write(cada_linha.strip() + "\n")
+                    if validado == False:
+                        validado = True
+                        #envio_para_API(cada_linha.strip())
+                        print(f'Log do servico {servico} e Tipo {nome_padrao} encontrado, aplicando pre-filtro do {servico}: {nome_padrao}')
+                        #with open("Colector/minimim.txt", "a") as file:
+                        #file.write(cada_linha.strip() + "\n")
 
-                    #print(f'Log de Acordo com a configuração encontrado ')
+                        #print(f'Log de Acordo com a configuração encontrado ')
 # Todo o PRE-FILTRO, precisa de uma função com essa mesma logica, 
 #====================================================================================
 
@@ -101,7 +104,7 @@ class MyEventHandler(FileSystemEventHandler):
                 f.seek(self._pos)
                 novas_linhas = f.readlines()
                 self._pos = f.tell()
-                flask_pre_filter(novas_linhas,regras)
+                pre_filter(novas_linhas,regras)
 #====================================================================================
 
 
