@@ -1,0 +1,200 @@
+0:
+  Endereco Servidor: server
+  IP de Origem: 192.168.1.101
+  PIDs:
+  - '1042'
+  Portas:
+  - '54321'
+  Resumo do Log: Acesso Negado
+  Tentativas: 1
+  Usario: root
+1:
+  Endereco Servidor: server
+  IP de Origem: 10.0.0.45
+  PIDs:
+  - '1043'
+  Portas:
+  - '49812'
+  Resumo do Log: Acesso Negado
+  Tentativas: 1
+  Usario: admin
+2:
+  Endereco Servidor: server
+  IP de Origem: 203.0.113.77
+  PIDs:
+  - '1044'
+  Portas:
+  - '51234'
+  Resumo do Log: Acesso Negado
+  Tentativas: 1
+  Usario: ubuntu
+3:
+  Endereco Servidor: server
+  IP de Origem: 192.168.1.10
+  PIDs:
+  - '1045'
+  Portas:
+  - '60001'
+  Resumo do Log: Acesso aceito
+  Tentativas: 1
+  Usario: deploy
+4:
+  Endereco Servidor: server
+  IP de Origem: 172.16.0.5
+  PIDs:
+  - '1046'
+  Portas:
+  - '62345'
+  Resumo do Log: Acesso aceito
+  Tentativas: 1
+  Usario: ubuntu
+5:
+  Endereco Servidor: server
+  IP de Origem: 198.51.100.23
+  PIDs:
+  - '1047'
+  Portas:
+  - 44321 ssh2
+  Resumo do Log: usuario inexistente
+  Tentativas: 1
+  Usario: guest
+6:
+  Endereco Servidor: server
+  IP de Origem: 203.0.113.55
+  PIDs:
+  - '1048'
+  Portas:
+  - 47890 ssh2
+  Resumo do Log: usuario inexistente
+  Tentativas: 1
+  Usario: oracle
+7:
+  Endereco Servidor: server
+  IP de Origem: 10.10.10.10
+  PIDs:
+  - '1049'
+  Portas:
+  - '52100'
+  Resumo do Log: usuario inexistente
+  Tentativas: 1
+  Usario: invalid user testuser
+8:
+  Endereco Servidor: server
+  IP de Origem: 192.168.1.101
+  PIDs:
+  - '1050'
+  Portas:
+  - 54321 [preauth]
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: root
+9:
+  Endereco Servidor: server
+  IP de Origem: 10.0.0.45
+  PIDs:
+  - '1051'
+  Portas:
+  - 49812 [preauth]
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: admin
+10:
+  Endereco Servidor: server
+  IP de Origem: 203.0.113.77
+  PIDs:
+  - '1052'
+  Portas:
+  - '51234:11: Bye Bye [preauth]'
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: null
+11:
+  Endereco Servidor: server
+  IP de Origem: 198.51.100.23
+  PIDs:
+  - '1053'
+  Portas:
+  - '44321:11: Normal Shutdown [preauth]'
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: null
+12:
+  Endereco Servidor: server
+  IP de Origem: 185.220.101.5
+  PIDs:
+  - '1054'
+  Portas:
+  - '39999'
+  Resumo do Log: Acesso Negado
+  Tentativas: 1
+  Usario: root
+13:
+  Endereco Servidor: server
+  IP de Origem: 192.168.0.200
+  PIDs:
+  - '1055'
+  Portas:
+  - '61000'
+  Resumo do Log: Acesso aceito
+  Tentativas: 1
+  Usario: admin
+14:
+  Endereco Servidor: server
+  IP de Origem: 45.33.32.156
+  PIDs:
+  - '1056'
+  Portas:
+  - 55678 ssh2
+  Resumo do Log: usuario inexistente
+  Tentativas: 1
+  Usario: pi
+15:
+  Endereco Servidor: server
+  IP de Origem: 45.33.32.156
+  PIDs:
+  - '1057'
+  Portas:
+  - '55678:11: Bye Bye [preauth]'
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: null
+16:
+  Endereco Servidor: server
+  IP de Origem: 45.33.32.156
+  PIDs:
+  - '1058'
+  Portas:
+  - 55678 [preauth]
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: pi
+17:
+  Endereco Servidor: server
+  IP de Origem: 192.0.2.88
+  PIDs:
+  - '1059'
+  Portas:
+  - '43210'
+  Resumo do Log: Acesso Negado
+  Tentativas: 1
+  Usario: postgres
+18:
+  Endereco Servidor: server
+  IP de Origem: 10.0.0.1
+  PIDs:
+  - '1060'
+  Portas:
+  - '58765'
+  Resumo do Log: Acesso aceito
+  Tentativas: 1
+  Usario: root
+19:
+  Endereco Servidor: server
+  IP de Origem: 192.0.2.88
+  PIDs:
+  - '1061'
+  Portas:
+  - '43210:11: Normal Shutdown [preauth]'
+  Resumo do Log: "Conex\xE3o fechada"
+  Tentativas: 1
+  Usario: null

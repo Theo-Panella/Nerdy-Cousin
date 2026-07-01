@@ -1,0 +1,20 @@
+Jun 10 08:12:03 server sshd[1042]: Failed password for root from 192.168.1.101 port 54321 ssh2
+Jun 10 08:13:15 server sshd[1043]: Failed password for admin from 10.0.0.45 port 49812 ssh2
+Jun 10 08:14:02 server sshd[1044]: Failed password for ubuntu from 203.0.113.77 port 51234 ssh2
+Jun 10 08:15:30 server sshd[1045]: Accepted password for deploy from 192.168.1.10 port 60001 ssh2
+Jun 10 08:16:45 server sshd[1046]: Accepted password for ubuntu from 172.16.0.5 port 62345 ssh2
+Jun 10 08:17:10 server sshd[1047]: Invalid user guest from 198.51.100.23 port 44321 ssh2
+Jun 10 08:18:22 server sshd[1048]: Invalid user oracle from 203.0.113.55 port 47890 ssh2
+Jun 10 08:19:05 server sshd[1049]: Failed password for invalid user testuser from 10.10.10.10 port 52100 ssh2
+Jun 10 08:20:11 server sshd[1050]: Connection closed by authenticating user root 192.168.1.101 port 54321 [preauth]
+Jun 10 08:21:33 server sshd[1051]: Connection closed by authenticating user admin 10.0.0.45 port 49812 [preauth]
+Jun 10 08:22:47 server sshd[1052]: Received disconnect from 203.0.113.77 port 51234:11: Bye Bye [preauth]
+Jun 10 08:23:59 server sshd[1053]: Received disconnect from 198.51.100.23 port 44321:11: Normal Shutdown [preauth]
+Jun 10 08:25:01 server sshd[1054]: Failed password for root from 185.220.101.5 port 39999 ssh2
+Jun 10 08:26:14 server sshd[1055]: Accepted password for admin from 192.168.0.200 port 61000 ssh2
+Jun 10 08:27:38 server sshd[1056]: Invalid user pi from 45.33.32.156 port 55678 ssh2
+Jun 10 08:28:50 server sshd[1057]: Received disconnect from 45.33.32.156 port 55678:11: Bye Bye [preauth]
+Jun 10 08:30:05 server sshd[1058]: Connection closed by authenticating user pi 45.33.32.156 port 55678 [preauth]
+Jun 10 08:31:17 server sshd[1059]: Failed password for postgres from 192.0.2.88 port 43210 ssh2
+Jun 10 08:32:29 server sshd[1060]: Accepted password for root from 10.0.0.1 port 58765 ssh2
+Jun 10 08:33:41 server sshd[1061]: Received disconnect from 192.0.2.88 port 43210:11: Normal Shutdown [preauth]
