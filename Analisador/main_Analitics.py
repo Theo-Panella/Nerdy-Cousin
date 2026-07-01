@@ -12,7 +12,7 @@ from Analise.contexto import analisar_contexto
 # Tipo de log: Erro, acesso, alteração, requisição
 
 # Variavel de abertura do arquivo de logs
-log_file = open('Analitics/logs.txt', 'r')
+log_file = open('Material/logs.txt', 'r')
 
 # Leitura de linha dentro de uma array, cada linha é um index da array
 logs = log_file.readlines() 
@@ -83,5 +83,5 @@ for i, (chave, evento) in enumerate(eventos_agregados.items()):
     data[i] = evento
 
 
-with open("file.yaml", "w") as file:
+with open("Material/file.yaml", "w") as file:
     yaml.dump(data, file)
