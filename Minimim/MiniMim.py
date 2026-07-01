@@ -23,11 +23,20 @@ caminho_de_log = '.\\Material\\logs_colector.txt'
 with open(caminho_de_configuracao, 'r') as arquivo_de_configuracao_puro:
     configuracao = yaml.safe_load(arquivo_de_configuracao_puro)
 
+# Para cada servico gera uma LISTA de regras ja ordenada da mais especifica
+# para a mais generica (maior especificidade primeiro), com o padrao compilado.
 regras = {
-    servico: {
-        tipo: re.compile(padrao)
-        for tipo, padrao in padroes.items()
-    }
+    servico: sorted(
+        [
+            {
+                "id": id_padrao,
+                "padrao": re.compile(regra["padrao"]),
+                "especificidade": regra.get("especificidade", 0),
+            }
+            for id_padrao, regra in padroes.items()
+        ],
+        key=lambda r: -r["especificidade"],
+    )
     for servico, padroes in configuracao.items()
 }
 #====================================================================================
@@ -38,34 +47,28 @@ regras = {
 def pre_filter(ultimas_linhas,regras):
     # Pega cada linha da ultima linha lida, default = 1
     for cada_linha in ultimas_linhas:
-        ''' Pega cada serviço e seu padrao. 
-        EX: Servico: 
-                PadraoA: "Valor"
-                PadraoB: "Valor"
-                ...
-        '''
-        for servico, padrao in regras.items():
+        linha = cada_linha.strip()
+
+        for servico, regras_do_servico in regras.items():
             if servico not in lista_de_servico:
                 continue
-            ''' Pega cada padrao (nome_padrao) e seu compile (str_padrao). 
-                EX:
-                        (PadraoA) nome_padrao: "str_padrao"
-                        (PadraoB) nome_padrao: "str_padrao"
+            ''' Pega cada serviço e sua lista de regras (ja ordenada da mais
+                especifica para a mais generica).
+                Cada regra tem: id, padrao (compilado) e especificidade.
+                EX: Servico:
+                        - {id: IDpadraoA, padrao: <compile>, especificidade: 10}
+                        - {id: IDpadraoB, padrao: <compile>, especificidade: 1}
                         ...
-                '''
-            validado = False
-            for nome_padrao, padrao_compilado  in padrao.items():
-                # Verifica se atende os padrões daquele servico
-                if padrao_compilado.search(cada_linha.strip()):
-                    if validado == False:
-                        validado = True
-                        #envio_para_API(cada_linha.strip())
-                        print(f'Log do servico {servico} e Tipo {nome_padrao} encontrado, aplicando pre-filtro do {servico}: {nome_padrao}')
-                        #with open("Colector/minimim.txt", "a") as file:
-                        #file.write(cada_linha.strip() + "\n")
-
-                        #print(f'Log de Acordo com a configuração encontrado ')
-# Todo o PRE-FILTRO, precisa de uma função com essa mesma logica, 
+            '''
+            for regra in regras_do_servico:
+                # Verifica se atende o padrao; o primeiro match (mais especifico) vence
+                if regra["padrao"].search(linha):
+                    #envio_para_API(linha)
+                    print(f'Log do servico {servico} e Tipo {regra["id"]} encontrado, aplicando pre-filtro do {servico}: {regra["id"]}')
+                    #with open("Material/minimim.txt", "a") as file:
+                    #    file.write(linha + "\n")
+                    break
+# Todo o PRE-FILTRO, precisa de uma função com essa mesma logica,
 #====================================================================================
 
 #====================================================================================
