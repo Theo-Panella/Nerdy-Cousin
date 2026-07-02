@@ -88,6 +88,13 @@ Lê os logs, quebra cada linha, agrega os eventos e gera o YAML de resultados:
 python Analisador/main_Analitics.py
 ```
 
+### Centralizador (API Falcon)
+Sobe a API Falcon do Centralizador via gunicorn:
+
+```bash
+gunicorn Centralizador.central:app
+```
+
 ---
 
 ## Configuração do pré-filtro (`Minimim/config.yaml`)
