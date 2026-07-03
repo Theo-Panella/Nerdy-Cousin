@@ -1,10 +1,13 @@
-import falcon
+from fastapi import FastAPI
 
-class Resource:
-    def on_get(self, req, resp):
-        """Handle GET requests."""
-        resp.media = {'message': "Hello world"}
-        resp.status = falcon.HTTP_200
+app = FastAPI()
 
-app = falcon.App()
-app.add_route('/', Resource())
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: str | None = None):
+    return {"item_id": item_id, "q": q}

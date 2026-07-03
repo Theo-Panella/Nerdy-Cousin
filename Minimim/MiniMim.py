@@ -11,8 +11,8 @@ from watchdog.observers import Observer
 #====================================================================================
 # Variaveis Globais
 lista_de_servico = ['Flask']
-caminho_de_configuracao = "Minimim/config.yaml"
-caminho_de_log = 'Material/logs_colector.txt'
+caminho_de_configuracao = ".\Minimim\config.yaml"
+caminho_de_log = '.\Material\logs_colector.txt'
 #====================================================================================
 
 
