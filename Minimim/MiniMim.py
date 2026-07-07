@@ -63,7 +63,7 @@ def pre_filter(ultimas_linhas,regras):
             for regra in regras_do_servico:
                 # Verifica se atende o padrao; o primeiro match (mais especifico) vence
                 if regra["padrao"].search(linha):
-                    envio_para_API(linha, servico)
+                    envio_para_API(linha, servico, regra["id"])
                     #print(f'Log do servico {servico} e Tipo {regra["id"]} encontrado, aplicando pre-filtro do {servico}: {regra["id"]}')
                     #with open("Material/minimim.txt", "a") as file:
                     #    file.write(linha + "\n")
@@ -73,15 +73,14 @@ def pre_filter(ultimas_linhas,regras):
 
 #====================================================================================
 # Envio do log para API
-def envio_para_API(log, servico):
+def envio_para_API(log, servico, tipo):
     # Aqui você pode implementar a lógica para enviar o log para a API
     # Por exemplo, usando a biblioteca requests para fazer uma requisição POST
     import requests
 
     url = "http://127.0.0.1:8000"  # Substitua pelo endpoint da sua API
     headers = {"Content-Type": "application/json"}
-    data = {"servico": servico,"log": log}  # Você pode ajustar os dados conforme necessário
-
+    data = {"servico": servico,"log": log, "tipo": tipo}  # Você pode ajustar os dados conforme necessário
     try:
         response = requests.post(url, json=data, headers=headers)
         if response.status_code == 200:
