@@ -15,8 +15,7 @@ from pydantic import BaseModel
 
 #====================================================================================
 # Configuracao
-# Path(__file__).resolve() garante caminho absoluto correto em qualquer SO.
-ARQUIVO_DE_LOGS = Path(__file__).resolve().parent / "Material/logs_recebidos.txt"
+arquivo_de_logs = r".\Material\logs_centralizado.txt"
 #====================================================================================
 
 
@@ -44,7 +43,7 @@ def receber_log(entrada: LogRecebido):
     linha = f"{momento} {origem} {entrada.log}"
 
     # Persiste em arquivo (append) alem de imprimir no console.
-    with open(ARQUIVO_DE_LOGS, "a", encoding="utf-8") as arquivo:
+    with open(arquivo_de_logs, "a", encoding="utf-8") as arquivo:
         arquivo.write(linha + "\n")
     print(f"Log recebido: {linha}")
 
