@@ -64,7 +64,7 @@ def pre_filter(ultimas_linhas,regras):
                 # Verifica se atende o padrao; o primeiro match (mais especifico) vence
                 if regra["padrao"].search(linha):
                     envio_para_API(linha)
-                    print(f'Log do servico {servico} e Tipo {regra["id"]} encontrado, aplicando pre-filtro do {servico}: {regra["id"]}')
+                    #print(f'Log do servico {servico} e Tipo {regra["id"]} encontrado, aplicando pre-filtro do {servico}: {regra["id"]}')
                     #with open("Material/minimim.txt", "a") as file:
                     #    file.write(linha + "\n")
                     break
@@ -85,7 +85,7 @@ def envio_para_API(log):
     try:
         response = requests.post(url, json=data, headers=headers)
         if response.status_code == 200:
-            print("Log enviado para centralizador")
+            print(f"Log enviado para centralizador, Status code:{response.status_code}")
         else:
             print(f"Falha ao enviar log. Status code: {response.status_code}")
     except Exception as e:
